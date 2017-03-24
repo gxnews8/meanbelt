@@ -3,17 +3,11 @@
 		<div class="container">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="#/dashboard">Go to Polls</a>
+					<a href="#/dashboard">Go back Dashboard</a>
 				</li>
-
-				
-
 			</ul>
-			
-
 		</div>
 	</nav>
-
 
 	<div class="container">
 		<h3>{{survey.question}}</h3>
@@ -24,21 +18,25 @@
 				<th>Current Count of Votes</th>
 				<th>Action</th>
 			</tr>
-			<tr ng-repeat="option in survey.options" >
+			<tr ng-repeat="option in survey.options | orderBy: '-option.vote'" >
 				<td>{{option.name}}</td>
 				<td>{{option.vote}}</td>
 				<td>
 				<button class="btn btn-info" ng-click="addVote($index)">
 					<span class="glyphicon glyphicon-thumbs-up"></span>
-				Vote</button></td>
+				Like</button>
+				<button class="btn btn-danger" ng-click="minusVote($index)">
+					<span class="glyphicon glyphicon-thumbs-down"></span>
+				Sad</button>
+				</td>
 			</tr>
 		</table>
 
 	</div>
-	
-	
-	
-	
+
+
+
+
 
 
 

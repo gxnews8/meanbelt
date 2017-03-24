@@ -3,7 +3,7 @@ var SurveySchema = new mongoose.Schema({
 	question: {type: String, minlength:8, required: true},
 	created_at: {type:Date, default: Date.now},
 	_user: {type:mongoose.Schema.Types.ObjectId,ref:'User'},
-	options: [{type:String,minglength:3}],
+	options: [{type:String,minlength:3}],
 	votes: [Number]
 })
 
